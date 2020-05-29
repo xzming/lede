@@ -10,11 +10,11 @@
 name: OpenWrt-CI
 
 on:
+  schedule:
+    - cron: 0 20 * * *
   push:
-    branches: 
-      - master
-   schedule:
-     - cron: 0 20 * * *
+    tags:
+      - '*'
 
 jobs:
 
@@ -141,11 +141,11 @@ jobs:
           # 常用LuCI插件选择:
            cat >> .config <<EOF
 	   CONFIG_PACKAGE_luci-app-accesscontrol=y
-           CONFIG_PACKAGE_luci-app-adbyby-plus=y
-           CONFIG_PACKAGE_luci-app-aria2=y
+	   CONFIG_PACKAGE_luci-app-adbyby-plus=y
+	   CONFIG_PACKAGE_luci-app-aria2=y
 	   CONFIG_PACKAGE_luci-app-autoreboot=y
-           CONFIG_PACKAGE_luci-app-baidupcs-web=y
-           CONFIG_PACKAGE_luci-app-docker=y
+	   CONFIG_PACKAGE_luci-app-baidupcs-web=y
+	   CONFIG_PACKAGE_luci-app-docker=y
 	   CONFIG_PACKAGE_luci-app-ddns=y
 	   CONFIG_PACKAGE_luci-app-filetransfer=y
 	   CONFIG_PACKAGE_luci-app-firewall=y
