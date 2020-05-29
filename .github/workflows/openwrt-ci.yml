@@ -11,10 +11,10 @@ name: OpenWrt-CI
 
 on:
   schedule:
-    - cron: 46 10 * * *
+    - cron: 47 10 * * *
   push:
-    tags:
-      - '*'
+    branches: 
+      - master
 
 jobs:
 
